@@ -1,5 +1,4 @@
 <?php
-
 class DBConnection{
     private $conn=null;
 
