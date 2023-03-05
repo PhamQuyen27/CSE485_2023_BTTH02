@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
+    <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
             <div class="container-fluid">
                 <div class="my-logo">
@@ -23,10 +23,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./">Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="index.php?controller=home&action=trangchu">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./login.php">Đăng nhập</a>
+                    <a class="nav-link" href="index.php?controller=home&action=login">Đăng nhập</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -36,6 +36,7 @@
                 </div>
             </div>
         </nav>
+
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -66,7 +67,24 @@
     <main class="container-fluid mt-3">
         <h3 class="text-center text-uppercase mb-3 text-primary">TOP bài hát yêu thích</h3>
         <div class="row">
-       
+        <?php
+        
+                foreach($data as $value){
+                    
+            ?>
+            <div class="col-sm-3">
+                    <div class="card mb-2" style="width: 100%;">
+                        <img src="<?php echo $value['hinhanh'];?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <a href="index.php?controller=home&action=detail&ma_bviet=<?php echo $value['ma_bviet']?>" class="text-decoration-none"><?php echo $value['ten_bhat'];?></a>
+                            </h5>
+                        </div>
+                    </div>
+            </div>
+            <?php
+                }
+            ?> 
         </div>
     </main>
     <footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary  border-2" style="height:80px">
