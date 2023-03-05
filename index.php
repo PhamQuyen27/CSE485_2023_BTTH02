@@ -1,6 +1,5 @@
 <?php
 
-include 'models/DBConnection.php';
 
 include "models/Home.php";
 $db = new Database1;
@@ -21,7 +20,9 @@ switch( $controller ) {
         require_once('controllers/HomeController.php');
         break;
     }
-
+    case 'member':{
+        require_once('controllers/MemberController.php');
+    }
 }
 
 ?>
