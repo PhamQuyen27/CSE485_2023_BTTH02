@@ -1,4 +1,5 @@
 <?php
+
 class DBConnection{
     private $conn=null;
 
@@ -14,6 +15,7 @@ class DBConnection{
     public function getConnection(){
         return $this->conn;
     }
-
-
 }
+
+// Tạo một biến toàn cục để lưu kết nối CSDL
+$conn = (new DBConnection())->getConnection();
