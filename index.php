@@ -1,9 +1,9 @@
 <?php
 
-include 'models/DBConnection.php';
+// include 'configs/DBConnection.php';
 
-include "models/Home.php";
-$db = new Database1;
+include "models/Article.php";
+$db = new Article;
 $db-> connect();
 
 // $con = new DB;
