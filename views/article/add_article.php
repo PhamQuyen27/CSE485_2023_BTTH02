@@ -73,16 +73,13 @@
 
                     <div class="input-group mt-3 mb-3">
                         <span style ="padding : 0px 25px 0px 25px" class="input-group-text" id="lblAr">Tóm tắt</span>
-                        <textarea type="text" class="form-control" name="txttomtat" ></textarea>
+                        <input type="text" class="form-control" name="noidung"  id="noidung" style="width: 80%; height: 100px;">
                     </div>
 
 
                     <div class="input-group mt-3 mb-3" >
                         <span style ="padding : 0px 20px 0px 20px "class="input-group-text" id="lblArContent">Nội dung</span>
-                        <div class="" id = "editor">
-                        <textarea type="text"  class="form-control" name="txtnoidung" >
-                        </textarea>
-                        </div>
+                        <input type="text" class="form-control" name="noidung"  id="noidung" style="width: 80%; height: 100px;">
                     </div>
 
                     <div class="input-group mt-3 mb-3">

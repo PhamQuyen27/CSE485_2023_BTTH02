@@ -34,7 +34,7 @@
                         <a class="nav-link" href="author.php">Tác giả</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" href="index.php?controller=article&action=list_article">Bài viết</a>
+                        <a class="nav-link active fw-bold" href="index.php?controller=article">Bài viết</a>
                     </li>
                 </ul>
                 </div>
@@ -46,7 +46,7 @@
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
-                <a href="add_article.php" class="btn btn-success">Thêm mới</a>
+                <a href="index.php?controller=article&action=create" class="btn btn-success">Thêm mới</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -59,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($article as $key) { ?>
+                        <?php foreach ($articles as $key) { ?>
                         <tr>
                             <th scope="row"><?php echo $key->getMaBviet() ?></th>
                             <td><?php echo $key->getTieude() ?></td>

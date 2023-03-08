@@ -15,7 +15,8 @@ class ArticleService{
 
         $sql = "SELECT * FROM baiviet
                 INNER JOIN tacgia ON baiviet.ma_tgia = tacgia.ma_tgia
-                INNER JOIN theloai ON theloai.ma_tloai = baiviet.ma_tloai";
+                INNER JOIN theloai ON theloai.ma_tloai = baiviet.ma_tloai
+                order by ma_bviet ASC";
         $stmt = $conn->query($sql);
 
         // B3. Xử lý kết quả
