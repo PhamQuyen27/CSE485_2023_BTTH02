@@ -34,7 +34,7 @@
                         <a class="nav-link" href="author.php">Tác giả</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" href="article.php">Bài viết</a>
+                        <a class="nav-link active fw-bold" href="index.php?controller=article&action=list_article">Bài viết</a>
                     </li>
                 </ul>
                 </div>
@@ -51,32 +51,26 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Tiêu đề</th>
-                            <th scope="col">Tên bài hát</th>
-                            <th scope="col">Mã thể loại</th>
-                            <th scope="col">Tóm tắt</th>
-                            <th scope="col">Nội dung</th>
-                            <th scope="col">Mã tác giả</th>
-                            <th scope="col">Ngày viết</th>
-                            <th scope="col">Hình ảnh</th>
+                            <th scope="col">Tên bài viết </th>
+                            <th scope="col">Tên bài hát </th>
+                            <th scope="col">Tên tác giả </th>
                             <th>Sửa</th>
                             <th>Xóa</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($results as $key => $value) { ?>
+                        <?php foreach ($article as $key) { ?>
                         <tr>
-                            <td><?php echo $value['ma_bviet'] ?></td>
-                            <td><?php echo $value['tieude'] ?></td>
-                            <td><?php echo $value['ten_bhat'] ?></td>
-                            <td><?php echo $value['ten_tloai'] ?></td>
-                            <td><?php echo $value['tomtat'] ?></td>
-                            <td><?php echo $value['noidung'] ?></td>
-                            <td><?php echo $value['ten_tgia'] ?></td>
-                            <td><?php echo $value['ngayviet'] ?></td>
-                            <td><img src="../images/songs/<?php echo $value['hinhanh'] ?>" alt="" style = "width: 150px"></td>
-                            <td><a href="edit_article.php?id=<?php echo $value['ma_bviet'] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                            <td><a href="delete_article.php?id=<?php echo $value['ma_bviet'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                            <th scope="row"><?php echo $key->getMaBviet() ?></th>
+                            <td><?php echo $key->getTieude() ?></td>
+                            <td><?php echo $key->getTenBhat()  ?></td>
+                            <td><?php echo $key->getTentgia()?></td>
+                            <td>
+                                <a href="index.php?controller=article&action=edit&id=<?php echo $key->getMaBviet() ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </td>
+                            <td>
+                            <a href="index.php?controller=article&action=delete&id=<?php echo $key->getMaBviet() ?>" onclick="return confirm('Bạn có muốn xoá bài viết không?')">  <i class="fa-solid fa-trash"></i></a>
+                            </td>
                         </tr>
                         <?php } ?>
 
