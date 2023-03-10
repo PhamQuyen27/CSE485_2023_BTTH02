@@ -1,24 +1,25 @@
 <?php
-class Category{
-private $ma_tloai;
-private $ten_tloai;
 
-public function __construct($ma_tloai,$ten_tloai){
-    $this->ma_tloai= $ma_tloai;
-    $this->ten_tloai = $ten_tloai;
+class Category {
+    // Thuộc tính
+    private $ma_tloai;
+    private $ten_tloai;
+    public function __construct($ma_tloai=NULL,$ten_tloai=Null ) {
+        $this->ma_tloai = $ma_tloai;
+        $this->ten_tloai = $ten_tloai;
 }
-
-public function getMaTheLoai(){
+  //Setter và Getter
+  public function getMaTloai(){
     return $this->ma_tloai;
+  }
+  public function setMaTloai($ma_tloai) {
+    $this->ma_tloai = $ma_tloai;
 }
-
-public function getTenTheLoai(){
-    return $this->ten_tloai;
-}
-
-public function setTenTheLoai($ten_tloai_new){
-    $this->ten_tloai = $ten_tloai_new;
-}
-
+ public function getTentloai(){
+   return $this->ten_tloai; 
+ }
+ public function setTentloai($ten_tloai) {
+    $this->ten_tloai = $ten_tloai;
+ }
 }
 ?>
