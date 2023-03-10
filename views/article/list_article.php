@@ -51,9 +51,14 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Tên bài viết </th>
-                            <th scope="col">Tên bài hát </th>
-                            <th scope="col">Tên tác giả </th>
+                            <th scope="col">Tiêu đề</th>
+                            <th scope="col">Tên bài hát</th>
+                            <th scope="col">Mã thể loại</th>
+                            <th scope="col">Tóm tắt</th>
+                            <th scope="col">Nội dung</th>
+                            <th scope="col">Tên tác giả</th>
+                            <th scope="col">Ngày viết</th>
+                            <th scope="col">Hình ảnh</th>
                             <th>Sửa</th>
                             <th>Xóa</th>
                         </tr>
@@ -62,14 +67,19 @@
                         <?php foreach ($articles as $key) { ?>
                         <tr>
                             <th scope="row"><?php echo $key->getMaBviet() ?></th>
-                            <td><?php echo $key->getTieude() ?></td>
-                            <td><?php echo $key->getTenBhat()  ?></td>
+                            <td><?php echo $key->getTieude()?></td>
+                            <td><?php echo $key->getTenBhat()?></td>
+                            <td><?php echo $key->getTentloai()?></td>
+                            <td><?php echo $key->getTomtat()?></td>
+                            <td><?php echo $key->getNoidung()?></td>
                             <td><?php echo $key->getTentgia()?></td>
+                            <td><?php echo $key->getNgayviet()?></td>
+                            <td><img src="../assets/images/songs/<?php echo $key->getHinhanh() ?>" alt="" style = "width: 150px"></td>
                             <td>
                                 <a href="index.php?controller=article&action=edit&id=<?php echo $key->getMaBviet() ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
                             <td>
-                            <a href="index.php?controller=article&action=delete&id=<?php echo $key->getMaBviet() ?>" onclick="return confirm('Bạn có muốn xoá bài viết không?')">  <i class="fa-solid fa-trash"></i></a>
+                                <a href="index.php?controller=article&action=delete&id=<?php echo $key->getMaBviet() ?>" onclick="return confirm('Bạn có muốn xoá bài viết không?')">  <i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php } ?>

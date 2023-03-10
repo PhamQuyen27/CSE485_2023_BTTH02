@@ -70,12 +70,12 @@ class ArticleService{
         return $articles;
     }
 
-    public function getUpdateArticles($tieude,$tenbhat,$matloai,$tomtat,$noidung,$matgia,$ngayviet,$hinhanh,$mabviet){
+    public function getUpdateArticles($tieude,$tenbhat,$matloai,$tomtat,$noidung,$matgia,$mabviet){
        $dbConn = new DBConnection();
        $conn = $dbConn->getConnection();
 
         $sql = "UPDATE baiviet SET tieude = '$tieude', ten_bhat = '$tenbhat', ma_tloai = '$matloai' , tomtat = '$tomtat',
-        noidung = '$noidung' , ma_tgia = '$matgia' , ngayviet = '$ngayviet' , hinhanh = '$hinhanh' WHERE ma_bviet = '$mabviet' ";
+        noidung = '$noidung' , ma_tgia = '$matgia'  WHERE ma_bviet = '$mabviet' ";
         $stmt = $conn->query($sql);
 
         $update_articles = [];
@@ -94,8 +94,8 @@ class ArticleService{
             $tieuDe = $_POST['txttieude'];
             $baiHat = $_POST['txttenbaihat'];
             $maTloai = $_POST['txttloai'];
-            $tomTat = $_POST['txttomtat'];
-            $noiDung = $_POST['txtnoidung'];
+            $tomTat = $_POST['tomtat'];
+            $noiDung = $_POST['noidung'];
             $maTgia = $_POST['txttgia'];
             $link =  $_POST['path'].$_FILES['file-upload']['name'];
             $hinhAnh = $_FILES['file-upload']['name'];
