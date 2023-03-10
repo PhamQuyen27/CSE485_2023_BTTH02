@@ -1,4 +1,5 @@
 <?php
+
 class Category {
     // Thuộc tính
     private $ma_tloai;
