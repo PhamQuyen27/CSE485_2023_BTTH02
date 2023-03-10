@@ -34,7 +34,7 @@
                         <a class="nav-link" href="author.php">Tác giả</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" href="index.php?controller=article&action=list_article">Bài viết</a>
+                        <a class="nav-link active fw-bold" href="index.php?controller=article">Bài viết</a>
                     </li>
                 </ul>
                 </div>
@@ -73,7 +73,7 @@
 
                     <div class="input-group mt-3 mb-3">
                         <span style ="padding : 0px 25px 0px 25px" class="input-group-text" id="lblAr">Tóm tắt</span>
-                        <input type="text" class="form-control" name="noidung"  id="noidung" style="width: 80%; height: 100px;">
+                        <input type="text" class="form-control" name="tomtat"  id="tomtat" style="width: 80%; height: 100px;">
                     </div>
 
 
